@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  scpsl:
+    build: .
+    container_name: scpsl
+    restart: unless-stopped
+    ports:
+      - "7777:7777/udp"
+      - "7777:7777"
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ~/scpsl/scp_server_config:"/home/scpsl/.config/SCP Secret Laboratory"
