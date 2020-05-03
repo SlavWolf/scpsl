@@ -20,12 +20,12 @@ ENV INSTALL_LOC "/scpserver"
 
 USER root
 RUN apt update \
-	&& apt upgrade --assume-yes \
+    && apt upgrade --assume-yes \
     && rm -rf /var/lib/apt/lists/*
 
 RUN groupadd -r scpsl \
-	&& useradd -mr -s /bin/false -g scpsl scpsl \
-	&& mkdir -p "/home/scpsl/.config/SCP Secret Laboratory" $INSTALL_LOC \
+    && useradd -mr -s /bin/false -g scpsl scpsl \
+    && mkdir -p /home/scpsl/.config/SCP\ Secret\ Laboratory $INSTALL_LOC \
     && chown -R scpsl:scpsl $INSTALL_LOC
 COPY --chown=scpsl:scpsl --from=steambuild /scpserver $INSTALL_LOC
 

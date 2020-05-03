@@ -10,4 +10,4 @@ services:
       - "7777:7777"
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - ~/scpsl/scp_server_config:"/home/scpsl/.config/SCP Secret Laboratory"
+      - ~/scpsl/scp_server_config:/home/scpsl/.config/SCP Secret Laboratory
